@@ -1,0 +1,10 @@
+{
+  "id": "06_floorplan_unet",
+  "nom": "Reconnaissance de plan d'étage",
+  "algo": "U-Net + ResNet-34",
+  "dataset": "CubiCasa5K (CC BY-NC)",
+  "tache": "Segmentation floor / wall / door / window",
+  "metriques": "mIoU val auteur HF ≈ 0.983 · sortie DRAFT_UNVERIFIED",
+  "statut": "Baseline HF + pipeline",
+  "checkpoint": "scripts/download_weights.py → best.safetensors"
+}

@@ -1,0 +1,32 @@
+{
+  "model": "fire_smoke_best.pt",
+  "architecture": "YOLOv26-S (Ultralytics)",
+  "model_origin": "huggingface:SalahALHaismawi/yolov26-fire-detection",
+  "weights_url": "https://huggingface.co/SalahALHaismawi/yolov26-fire-detection/resolve/main/best.pt",
+  "trained_by_us": false,
+  "training_note": "Hackathon delivery uses the published pretrained checkpoint. Local D-Fire fine-tuning was started then aborted by request.",
+  "class_mapping": {
+    "0": "fire",
+    "1": "other",
+    "2": "smoke"
+  },
+  "author_reported_metrics": {
+    "source": "https://huggingface.co/SalahALHaismawi/yolov26-fire-detection",
+    "mAP50": 0.949,
+    "mAP50-95": 0.68,
+    "precision": 0.896,
+    "recall": 0.888,
+    "epochs": 100,
+    "batch": 16,
+    "imgsz": 640,
+    "dataset_images": 8939,
+    "note": "Self-reported by model author. Not re-measured end-to-end on official D-Fire test split in this delivery."
+  },
+  "local_smoke_tests": {
+    "device": "cuda:0 (RTX 3050) when available else cpu",
+    "fire_image_detections": "PASS (fire boxes returned)",
+    "negative_image_detections": "PASS (zero detections on sampled negative)",
+    "smoke_image_detections": "VARIABLE on D-Fire stills (domain shift possible vs author dataset)"
+  },
+  "disclaimer": "Experimental visual detection; not a certified fire alarm / not suitable for certified industrial fire alarm operation."
+}

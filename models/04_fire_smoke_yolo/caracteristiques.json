@@ -1,0 +1,10 @@
+{
+  "id": "04_fire_smoke_yolo",
+  "nom": "Détection feu / fumée",
+  "algo": "YOLOv26-S",
+  "dataset": "Checkpoint HF (~8939 img auteur) + audit D-Fire",
+  "tache": "Détection — fire / other / smoke",
+  "metriques": "mAP50 0.949 · mAP50-95 0.680 (métriques auteur) · tests locaux OK",
+  "statut": "REAL (checkpoint public + smoke tests)",
+  "checkpoint": "weights/fire_smoke_best.pt"
+}

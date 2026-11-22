@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<title>Rapport du modèle — 08 Évaluation visuelle de dommages (avant / après)</title>
+<style>/* AeroShield FireTwin — Rapport modèle (print / PDF) */
+
+@page {
+  size: A4;
+  margin: 11mm 11mm 15mm 11mm;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #15202b;
+  background: #f4f6f8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10.25pt;
+  line-height: 1.58;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  background: #f4f6f8;
+  padding: 2mm 1mm 4mm;
+  min-height: 100%;
+}
+
+h1, h2, h3, .brand, .model-id, .kpi .value, .kpi .label, .status-pill, .chip, thead th {
+  font-family: "Bahnschrift", "Segoe UI Semibold", "Segoe UI", Calibri, sans-serif;
+}
+
+/* ── Masthead (clean, no dark blob) ── */
+.hero {
+  position: relative;
+  background: transparent;
+  color: #0f172a;
+  padding: 4px 2px 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #c5d0de;
+}
+
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.brand {
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 650;
+}
+
+.model-id {
+  font-size: 8pt;
+  letter-spacing: 0.04em;
+  color: #475569;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 22pt;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  max-width: 96%;
+}
+
+.hero-sub {
+  margin: 0 0 10px;
+  color: #475569;
+  font-family: Georgia, serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  max-width: 92%;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-pill {
+  display: inline-block;
+  margin-top: 0;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #9a3412;
+  border: 1px solid #ea580c;
+  box-shadow: none;
+}
+
+.status-pill.sample { color: #92400e; border-color: #d97706; }
+.status-pill.synth { color: #0c4a6e; border-color: #0284c7; }
+.status-pill.missing { color: #9f1239; border-color: #e11d48; }
+
+.hero-rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 12px;
+  background: #ea580c;
+  border: none;
+}
+
+/* ── KPI ── */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 0 0 12px;
+}
+
+.kpi {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cfd9e6;
+  border-radius: 10px;
+  padding: 11px 12px 10px;
+  box-shadow: none;
+  border-top: 3px solid #ea580c;
+}
+
+.kpi .label {
+  font-size: 7.2pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.kpi .value {
+  font-size: 17pt;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0f172a;
+}
+
+.kpi .hint {
+  margin-top: 4px;
+  font-family: Georgia, serif;
+  font-size: 7.8pt;
+  color: #94a3b8;
+}
+
+/* ── Visual band ── */
+.visual-band {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.visual-main, .visual-side {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cfd9e6;
+  box-shadow: none;
+}
+
+.visual-main img, .visual-side img {
+  display: block;
+  width: 100%;
+  height: 132px;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.visual-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  background: transparent;
+  border: none;
+}
+
+.visual-side figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cfd9e6;
+}
+
+.visual-side img { height: 80px; }
+
+.visual-main figcaption, .visual-side figcaption {
+  padding: 5px 9px;
+  font-family: "Bahnschrift", "Segoe UI", sans-serif;
+  font-size: 7pt;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  background: #ffffff;
+  border-top: 1px solid #e8eef5;
+}
+
+/* ── Meta chips ── */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.chip {
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid #c9d5e3;
+  color: #334155;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 8pt;
+}
+
+.chip strong { color: #0f766e; }
+
+/* ── Two-col intro ── */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ── Sections ── */
+.section {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid #cfd9e6;
+  border-radius: 14px;
+  padding: 13px 16px 12px;
+  margin: 0 0 10px;
+  backdrop-filter: blur(2px);
+}
+
+.section.plain {
+  background: transparent;
+  border: none;
+  padding: 4px 2px 2px;
+  margin: 0 0 8px;
+}
+
+.section h2 {
+  margin: 0 0 8px;
+  padding: 0 0 6px;
+  border-bottom: 2px solid rgba(234, 88, 12, 0.35);
+  font-size: 13pt;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+}
+
+.section h2 .num {
+  display: inline-block;
+  min-width: 1.4em;
+  margin-right: 6px;
+  color: #ea580c;
+}
+
+.section h3 {
+  margin: 11px 0 4px;
+  font-size: 10pt;
+  letter-spacing: 0.02em;
+  color: #0f766e;
+  text-transform: uppercase;
+}
+
+.section p { margin: 0 0 7px; }
+.section ul, .section ol { margin: 3px 0 8px; padding-left: 17px; }
+.section li { margin: 0 0 3px; }
+
+.section code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8.6pt;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 4px;
+  padding: 0 4px;
+  color: #9a3412;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  overflow: auto;
+  font-size: 8.5pt;
+  font-family: Consolas, monospace;
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 7px 0 10px;
+  font-size: 9.3pt;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #c5d0de;
+}
+
+thead th {
+  background: linear-gradient(90deg, #0f172a, #134e4a);
+  color: #f8fafc;
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+tbody td {
+  padding: 7px 10px;
+  border-top: 1px solid #e4ebf3;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) td { background: #f3f7fb; }
+tbody tr:nth-child(odd) td { background: #ffffff; }
+tbody td:first-child { font-weight: 700; color: #0f172a; width: 32%; }
+
+/* ── Callouts ── */
+.callout {
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cfd9e6;
+  border-left: 3px solid #ea580c;
+  font-size: 9.3pt;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  color: #334155;
+}
+
+.callout.warn {
+  background: #ffffff;
+  border-left-color: #ea580c;
+  color: #334155;
+}
+
+/* inline metrics figures inside section */
+.metric-figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.metric-figures figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #c5d0de;
+  background: #fff;
+}
+
+.metric-figures img {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.metric-figures figcaption {
+  font-family: "Bahnschrift", "Segoe UI", sans-serif;
+  font-size: 7pt;
+  padding: 4px 8px;
+  color: #64748b;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-note {
+  margin-top: 6px;
+  font-size: 8pt;
+  color: #64748b;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+</style>
+</head><body>
+<div class="page">
+  <header class="hero">
+    <div class="brand-row">
+      <div class="brand">AeroShield · FireTwin AI</div>
+      <div class="model-id">08_damage_resnet</div>
+    </div>
+    <h1>Dommages avant / après</h1>
+    <p class="hero-sub">Comparer deux photos du **même équipement / zone** (avant vs après incident) et classer :</p>
+    <div class="hero-meta">
+      <span class="status-pill missing">DATASET_MISSING</span>
+    </div>
+    <span class="hero-rule" aria-hidden="true"></span>
+  </header>
+
+  
+  <div class="callout warn"><strong>DATASET_MISSING</strong> — pas de paires indoor licenciées ; métriques volontairement <code>null</code>.</div>
+  
+  <div class="meta"><span class="chip"><strong>ID</strong> 08_damage_resnet</span><span class="chip"><strong>Algo</strong> ResNet-18 pairé</span><span class="chip"><strong>Dataset</strong> DATASET_MISSING (paires indoor requises)</span><span class="chip"><strong>Checkpoint</strong> results/damage_best.pt (après train)</span></div>
+
+  <div class="intro-grid"><section class="section"><h2><span class="num">01</span>Objectif</h2><p>Comparer deux photos du <strong>même équipement / zone</strong> (avant vs après incident) et classer :</p>
+<ul><li><code>visible_change</code></li><li><code>no_visible_change</code></li></ul>
+<p>Faible confiance → <code>REVIEW_REQUIRED</code>. <strong>Ne diagnostique pas</strong> cause incendie, tenue structurelle, ni aptitude à réutiliser l’équipement.</p></section><section class="section"><h2><span class="num">02</span>Architecture</h2><ul><li><strong>Algo :</strong> encodeur <strong>ResNet-18</strong> (torchvision, ImageNet) partagé</li><li><strong>Fusion :</strong> features before ∥ features after ∥ |before − after|</li><li><strong>Tête :</strong> classification binaire</li><li><strong>Checkpoint cible :</strong> <code>results/damage_best.pt</code> (après entraînement réel)</li></ul></section></div><section class="section"><h2>Pourquoi ResNet-18 pairé</h2><p>Architecture classique et légère pour similarité / changement ; préentraînement ImageNet ; adaptée à un petit jeu de paires indoor. Plus honnête que d’utiliser xBD (satellite) pour une usine.</p></section>
+  <section class="section"><h2><span class="num">03</span>Dataset</h2><h3>Schéma requis (pas encore rempli)</h3>
+<p>L’entraînement refuse de tourner sans vrai manifeste. Copier <code>data/dataset_manifest_template.csv</code> → <code>data/manifest.csv</code> et renseigner des paires <strong>indoor</strong> licenciées :</p>
+<table><thead><tr><th>Colonne</th><th>Sens</th></tr></thead><tbody><tr><td><code>before_path</code></td><td>Chemin relatif photo RGB pré-incident</td></tr><tr><td><code>after_path</code></td><td>Chemin relatif photo post-incident du <strong>même</strong> équipement / zone</td></tr><tr><td><code>label</code></td><td><code>visible_change</code> \</td></tr><tr><td><code>facility_id</code></td><td>Clé site (groupement)</td></tr><tr><td><code>incident_id</code></td><td>Clé incident (groupement)</td></tr><tr><td><code>asset_id</code></td><td>ID équipement / zone (métadonnée API, pas une classe)</td></tr><tr><td><code>split</code></td><td><code>train</code> / <code>val</code> / <code>test</code></td></tr></tbody></table>
+<h3>Hygiène des splits</h3>
+<p>Assigner des groupes entiers <strong><code>facility_id</code> / <code>incident_id</code></strong> à un seul split. Découper aléatoirement des frames de la même pièce ou rafale caméra ferait fuiter l’apparence et gonflerait les métriques.</p>
+<h3>Corpus explicitement rejetés</h3>
+<p>Les jeux satellite <strong>xBD / xView2</strong> (dommages de bâtiments) sont <strong>hors domaine</strong> pour l’inspection indoor industrielle. Les utiliser produirait de beaux chiffres qui ne transfèrent pas aux photos facility FireTwin — <code>code/train.py</code> et ce rapport interdisent ce raccourci.</p>
+<h3>Statut livraison actuelle</h3>
+<p><code>metrics/metrics.json</code> → <code>status: DATASET_MISSING</code>, <code>metrics: null</code>. L’architecture (ResNet-18 partagé + tête \|diff\| concaténée) est implémentée derrière le gate dans <code>code/train.py</code> / <code>code/predict.py</code>, mais <strong>aucune performance n’est revendiquée</strong>. Quand de vraies paires arriveront, relancer l’entraînement et remplacer cette section par P/R/F1 mesurés sur les facilities de test groupées.</p></section><section class="section"><h2><span class="num">04</span>Entraînement</h2><p>Uniquement si <code>data/manifest.csv</code> + images réelles sont fournis :</p>
+<pre><code>cd ai/models/08_damage_resnet
+python code/train.py --manifest data/manifest.csv</code></pre>
+<p>Sinon : <code>MODEL_UNAVAILABLE</code> + comparaison manuelle opérateur.</p></section><section class="section"><h2><span class="num">05</span>Métriques</h2><p><code>metrics/metrics.json</code> → statut <code>DATASET_MISSING</code> jusqu’à un run réel.</p></section><section class="section"><h2><span class="num">06</span>Intégration prévue</h2><p><code>POST /predict/damage</code> : fichiers before/after + IDs room/asset fournis séparément. Observation <strong>PENDING</strong> jusqu’à revue humaine ; ne change pas accessibilité des routes automatiquement.</p></section><section class="section"><h2><span class="num">07</span>Limites</h2><ul><li>Différence visuelle ≠ preuve de dommage feu</li><li>Pas de polygones de dégâts</li><li>Décisions sécurité = inspection humaine</li></ul></section>
+  
+  <p class="footer-note">Prototype hackathon FireTwin / AeroShield — ne remplace pas une certification incendie ni une inspection humaine.</p>
+</div>
+</body></html>

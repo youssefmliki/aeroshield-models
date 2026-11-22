@@ -1,0 +1,19 @@
+{
+  "id_to_label": {
+    "1": "Ethanol",
+    "2": "Ethylene",
+    "3": "Ammonia",
+    "4": "Acetaldehyde",
+    "5": "Acetone",
+    "6": "Toluene"
+  },
+  "label_to_id": {
+    "Ethanol": 1,
+    "Ethylene": 2,
+    "Ammonia": 3,
+    "Acetaldehyde": 4,
+    "Acetone": 5,
+    "Toluene": 6
+  },
+  "note": "Source labels are 1-based as provided by UCI (1=Ethanol ... 6=Toluene)."
+}

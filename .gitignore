@@ -1,0 +1,12 @@
+# Local datasets (too large / not for public clone)
+data/
+**/__pycache__/
+*.pyc
+.env
+.env.*
+.venv/
+venv/
+*.log
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<title>Rapport du modèle — 03 Personne thermique</title>
+<style>/* AeroShield FireTwin — Rapport modèle (print / PDF) */
+
+@page {
+  size: A4;
+  margin: 11mm 11mm 15mm 11mm;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #15202b;
+  background: #f4f6f8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10.25pt;
+  line-height: 1.58;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.page {
+  background: #f4f6f8;
+  padding: 2mm 1mm 4mm;
+  min-height: 100%;
+}
+
+h1, h2, h3, .brand, .model-id, .kpi .value, .kpi .label, .status-pill, .chip, thead th {
+  font-family: "Bahnschrift", "Segoe UI Semibold", "Segoe UI", Calibri, sans-serif;
+}
+
+/* ── Masthead (clean, no dark blob) ── */
+.hero {
+  position: relative;
+  background: transparent;
+  color: #0f172a;
+  padding: 4px 2px 14px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #c5d0de;
+}
+
+.brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.brand {
+  font-size: 8.5pt;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 650;
+}
+
+.model-id {
+  font-size: 8pt;
+  letter-spacing: 0.04em;
+  color: #475569;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: 22pt;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  max-width: 96%;
+}
+
+.hero-sub {
+  margin: 0 0 10px;
+  color: #475569;
+  font-family: Georgia, serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  max-width: 92%;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-pill {
+  display: inline-block;
+  margin-top: 0;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #9a3412;
+  border: 1px solid #ea580c;
+  box-shadow: none;
+}
+
+.status-pill.sample { color: #92400e; border-color: #d97706; }
+.status-pill.synth { color: #0c4a6e; border-color: #0284c7; }
+.status-pill.missing { color: #9f1239; border-color: #e11d48; }
+
+.hero-rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 12px;
+  background: #ea580c;
+  border: none;
+}
+
+/* ── KPI ── */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 0 0 12px;
+}
+
+.kpi {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cfd9e6;
+  border-radius: 10px;
+  padding: 11px 12px 10px;
+  box-shadow: none;
+  border-top: 3px solid #ea580c;
+}
+
+.kpi .label {
+  font-size: 7.2pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.kpi .value {
+  font-size: 17pt;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: #0f172a;
+}
+
+.kpi .hint {
+  margin-top: 4px;
+  font-family: Georgia, serif;
+  font-size: 7.8pt;
+  color: #94a3b8;
+}
+
+/* ── Visual band ── */
+.visual-band {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.visual-main, .visual-side {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cfd9e6;
+  box-shadow: none;
+}
+
+.visual-main img, .visual-side img {
+  display: block;
+  width: 100%;
+  height: 132px;
+  object-fit: contain;
+  background: #f8fafc;
+}
+
+.visual-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  background: transparent;
+  border: none;
+}
+
+.visual-side figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #cfd9e6;
+}
+
+.visual-side img { height: 80px; }
+
+.visual-main figcaption, .visual-side figcaption {
+  padding: 5px 9px;
+  font-family: "Bahnschrift", "Segoe UI", sans-serif;
+  font-size: 7pt;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  background: #ffffff;
+  border-top: 1px solid #e8eef5;
+}
+
+/* ── Meta chips ── */
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.chip {
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid #c9d5e3;
+  color: #334155;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 8pt;
+}
+
+.chip strong { color: #0f766e; }
+
+/* ── Two-col intro ── */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ── Sections ── */
+.section {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid #cfd9e6;
+  border-radius: 14px;
+  padding: 13px 16px 12px;
+  margin: 0 0 10px;
+  backdrop-filter: blur(2px);
+}
+
+.section.plain {
+  background: transparent;
+  border: none;
+  padding: 4px 2px 2px;
+  margin: 0 0 8px;
+}
+
+.section h2 {
+  margin: 0 0 8px;
+  padding: 0 0 6px;
+  border-bottom: 2px solid rgba(234, 88, 12, 0.35);
+  font-size: 13pt;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+}
+
+.section h2 .num {
+  display: inline-block;
+  min-width: 1.4em;
+  margin-right: 6px;
+  color: #ea580c;
+}
+
+.section h3 {
+  margin: 11px 0 4px;
+  font-size: 10pt;
+  letter-spacing: 0.02em;
+  color: #0f766e;
+  text-transform: uppercase;
+}
+
+.section p { margin: 0 0 7px; }
+.section ul, .section ol { margin: 3px 0 8px; padding-left: 17px; }
+.section li { margin: 0 0 3px; }
+
+.section code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8.6pt;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 4px;
+  padding: 0 4px;
+  color: #9a3412;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  overflow: auto;
+  font-size: 8.5pt;
+  font-family: Consolas, monospace;
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 7px 0 10px;
+  font-size: 9.3pt;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #c5d0de;
+}
+
+thead th {
+  background: linear-gradient(90deg, #0f172a, #134e4a);
+  color: #f8fafc;
+  text-align: left;
+  padding: 8px 10px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+tbody td {
+  padding: 7px 10px;
+  border-top: 1px solid #e4ebf3;
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) td { background: #f3f7fb; }
+tbody tr:nth-child(odd) td { background: #ffffff; }
+tbody td:first-child { font-weight: 700; color: #0f172a; width: 32%; }
+
+/* ── Callouts ── */
+.callout {
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cfd9e6;
+  border-left: 3px solid #ea580c;
+  font-size: 9.3pt;
+  font-family: "Segoe UI", Calibri, sans-serif;
+  color: #334155;
+}
+
+.callout.warn {
+  background: #ffffff;
+  border-left-color: #ea580c;
+  color: #334155;
+}
+
+/* inline metrics figures inside section */
+.metric-figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.metric-figures figure {
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #c5d0de;
+  background: #fff;
+}
+
+.metric-figures img {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.metric-figures figcaption {
+  font-family: "Bahnschrift", "Segoe UI", sans-serif;
+  font-size: 7pt;
+  padding: 4px 8px;
+  color: #64748b;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-note {
+  margin-top: 6px;
+  font-size: 8pt;
+  color: #64748b;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+</style>
+</head><body>
+<div class="page">
+  <header class="hero">
+    <div class="brand-row">
+      <div class="brand">AeroShield · FireTwin AI</div>
+      <div class="model-id">03_thermal_person</div>
+    </div>
+    <h1>Personne thermique</h1>
+    <p class="hero-sub">Slot API thermique pour démontrer le parcours UI (caméra thermique → présence possible)</p>
+    <div class="hero-meta">
+      <span class="status-pill sample">SAMPLE</span>
+    </div>
+    <span class="hero-rule" aria-hidden="true"></span>
+  </header>
+
+  
+  <div class="callout warn"><strong>SAMPLE</strong> — aucune performance REAL revendiquée. Slot thermique / UI uniquement (<code>metrics_valid=false</code>).</div>
+  
+  <div class="meta"><span class="chip"><strong>ID</strong> 03_thermal_person</span><span class="chip"><strong>Algo</strong> YOLO (slot thermique)</span><span class="chip"><strong>Dataset</strong> HIT-UAV (insuffisant)</span><span class="chip"><strong>Checkpoint</strong> ../../../weights/thermal_best.pt (fallback SAMPLE)</span></div>
+
+  <div class="intro-grid"><section class="section"><h2><span class="num">01</span>Objectif</h2><p>Slot API thermique pour démontrer le parcours UI (caméra thermique → présence possible).</p></section><section class="section"><h2><span class="num">02</span>Architecture</h2><ul><li>Détecteur YOLO chargé depuis <code>weights/thermal_best.pt</code> <strong>si</strong> disponible.</li><li>Sinon réponse explicite <strong>SAMPLE</strong> (régions simulées / fallback), jamais présentée comme modèle entraîné fiable.</li></ul></section></div><section class="section"><h2>Pourquoi ce choix</h2><p>Le jeu HIT-UAV local était trop petit pour des métriques honnêtes. Priorité au demo jury fiable : flood + RGB person en REAL, thermique clairement <strong>SAMPLE</strong>.</p></section>
+  <section class="section"><h2><span class="num">03</span>Dataset</h2><h3>Provenance (tentative)</h3>
+<p>Le corpus thermique visé est un sous-ensemble <strong>HIT-UAV</strong> (CC BY 4.0) : imagerie infrarouge UAV avec annotations personne. Les stems dans <code>metrics/metrics.json</code> suivent la convention HIT-UAV (<code>altitude_angle_…</code>). L’extrait local disponible pendant le hackathon était <strong>beaucoup trop petit</strong> pour une claim crédible (fine-tune journalisé ≈ 14 images train, 8 époques).</p>
+<h3>Pourquoi SAMPLE</h3>
+<p>À ce volume, tout mAP publié serait statistiquement non significatif et facilement overfitté. FireTwin conserve donc le <strong>slot API/UI thermique</strong> mais étiquette les sorties <code>source: SAMPLE</code> / <code>mode: SAMPLE_GT</code> : des boîtes GT HIT-UAV peuvent être affichées pour démontrer le parcours, <strong>explicitement pas</strong> comme prédictions modèle.</p>
+<h3>Scripts préparation / inférence</h3>
+<ul><li><code>scripts/prepare_thermal.py</code> — helpers de layout / conversion pour un futur jeu thermique adéquat.</li><li><code>scripts/infer_thermal.py</code> — charge <code>weights/thermal_best.pt</code> <strong>si</strong> présent ; sinon bascule sur le chemin SAMPLE documenté dans les métriques.</li></ul>
+<h3>Politique split / métriques</h3>
+<p>Aucune précision/rappel REAL n’est revendiquée. <code>metrics/metrics.json</code> fixe <code>performance_claim: false</code>, <code>metrics_valid: false</code>, et trace l’échec (<code>baseline yolov8n.pt</code> faible sur IR ; finetune court insuffisant). Ne <strong>pas</strong> confondre avec <code>02_rgb_person_yolo</code> (VisDrone RGB).</p>
+<h3>Exigences futures (honnêtes)</h3>
+<p>Un modèle thermique crédible demanderait : (1) des centaines–milliers de frames IR avec protocole d’annotation stable, (2) splits sensibles aux séquences (pas de fuite frame-à-frame), (3) métadonnées de calibration (palette / radiométrique vs pseudo-couleur), (4) négatifs (machines chaudes) pour contrôler les faux positifs. Jusque-là, cette fiche reste SAMPLE.</p></section><section class="section"><h2><span class="num">04</span>Métriques</h2><p><strong>Non présentées comme REAL.</strong> Voir <code>metrics/metrics.json</code> et label SAMPLE dans <code>jury_metrics_summary.json</code>.</p></section><section class="section"><h2><span class="num">05</span>Intégration</h2><p><code>POST /predict/thermal</code> → <code>source: SAMPLE</code> si charge réelle non validée.</p></section><section class="section"><h2><span class="num">06</span>Limites</h2><ul><li>Ne pas confondre avec le détecteur RGB VisDrone.</li><li>Aucune validation opérationnelle thermique.</li></ul></section>
+  
+  <p class="footer-note">Prototype hackathon FireTwin / AeroShield — ne remplace pas une certification incendie ni une inspection humaine.</p>
+</div>
+</body></html>

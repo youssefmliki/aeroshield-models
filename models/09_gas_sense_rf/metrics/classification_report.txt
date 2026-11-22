@@ -1,0 +1,20 @@
+FireTwin GasSense — Classification Report
+Evaluation: batch-separated | train=[1, 2, 3, 4, 5, 6, 7, 8, 9] | test=10
+Model: gas_classifier_v1 (RandomForestClassifier)
+
+              precision    recall  f1-score   support
+
+     Ethanol     0.8647    0.3833    0.5312       600
+    Ethylene     0.4836    0.5667    0.5219       600
+     Ammonia     0.7468    0.5750    0.6497       600
+Acetaldehyde     0.4897    0.7550    0.5941       600
+     Acetone     0.7108    0.7783    0.7430       600
+     Toluene     0.5639    0.5517    0.5577       600
+
+    accuracy                         0.6017      3600
+   macro avg     0.6432    0.6017    0.5996      3600
+weighted avg     0.6432    0.6017    0.5996      3600
+
+Accuracy: 0.6017
+Macro F1: 0.5996
+Mean single-sample latency (ms): 60.952822000253946

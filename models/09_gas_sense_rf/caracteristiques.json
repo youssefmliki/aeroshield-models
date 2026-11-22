@@ -1,0 +1,10 @@
+{
+  "id": "09_gas_sense_rf",
+  "nom": "Identification de gaz (GasSense)",
+  "algo": "Random Forest (128 features)",
+  "dataset": "UCI Gas Sensor Array Drift — test batch 10",
+  "tache": "Classification 6 gaz",
+  "metriques": "Accuracy 0.602 · Macro F1 0.600 (batch-separated)",
+  "statut": "REAL (expérimental, pas certifié)",
+  "checkpoint": "weights/gas_classifier.joblib"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "08_damage_resnet",
+  "nom": "Dommages avant / après",
+  "algo": "ResNet-18 pairé",
+  "dataset": "DATASET_MISSING (paires indoor requises)",
+  "tache": "visible_change vs no_visible_change",
+  "metriques": "Non calculées (pas de dataset)",
+  "statut": "DATASET_MISSING",
+  "checkpoint": "results/damage_best.pt (après train)"
+}

@@ -1,0 +1,286 @@
+{
+  "disclaimer": "Person POSSIBLE (thermique) \u2014 JAMAIS un survivant confirm\u00e9",
+  "performance_claim": false,
+  "dataset": "HIT-UAV subset (CC-BY-4.0) via ai/data/thermal",
+  "images": [
+    {
+      "image": "0_60_60_0_01717.jpg",
+      "stem": "0_60_60_0_01717",
+      "split": "test",
+      "seconds": 0.0,
+      "n_preds": 11,
+      "scores": [],
+      "boxes": [
+        [
+          278,
+          239,
+          290,
+          263
+        ],
+        [
+          301,
+          280,
+          312,
+          305
+        ],
+        [
+          303,
+          264,
+          315,
+          282
+        ],
+        [
+          409,
+          365,
+          427,
+          394
+        ],
+        [
+          515,
+          294,
+          528,
+          313
+        ],
+        [
+          472,
+          324,
+          487,
+          350
+        ],
+        [
+          383,
+          345,
+          398,
+          381
+        ],
+        [
+          383,
+          320,
+          406,
+          342
+        ],
+        [
+          474,
+          412,
+          485,
+          435
+        ],
+        [
+          523,
+          384,
+          539,
+          407
+        ],
+        [
+          569,
+          436,
+          583,
+          457
+        ]
+      ],
+      "precision": null,
+      "recall": null,
+      "has_gt": true,
+      "sample_note": "Bo\u00eetes GT SAMPLE \u2014 pas une inf\u00e9rence IA",
+      "visual": "0_60_60_0_01717_SAMPLE_GT.jpg",
+      "label": "Person POSSIBLE (thermique) \u2014 JAMAIS un survivant confirm\u00e9"
+    },
+    {
+      "image": "0_70_90_0_02066.jpg",
+      "stem": "0_70_90_0_02066",
+      "split": "test",
+      "seconds": 0.0,
+      "n_preds": 10,
+      "scores": [],
+      "boxes": [
+        [
+          162,
+          385,
+          174,
+          406
+        ],
+        [
+          226,
+          389,
+          246,
+          408
+        ],
+        [
+          276,
+          417,
+          292,
+          448
+        ],
+        [
+          309,
+          414,
+          341,
+          445
+        ],
+        [
+          353,
+          467,
+          377,
+          489
+        ],
+        [
+          373,
+          477,
+          389,
+          496
+        ],
+        [
+          520,
+          118,
+          532,
+          136
+        ],
+        [
+          400,
+          159,
+          417,
+          178
+        ],
+        [
+          505,
+          123,
+          520,
+          138
+        ],
+        [
+          481,
+          151,
+          507,
+          180
+        ]
+      ],
+      "precision": null,
+      "recall": null,
+      "has_gt": true,
+      "sample_note": "Bo\u00eetes GT SAMPLE \u2014 pas une inf\u00e9rence IA",
+      "visual": "0_70_90_0_02066_SAMPLE_GT.jpg",
+      "label": "Person POSSIBLE (thermique) \u2014 JAMAIS un survivant confirm\u00e9"
+    },
+    {
+      "image": "0_80_30_0_06917.jpg",
+      "stem": "0_80_30_0_06917",
+      "split": "test",
+      "seconds": 0.0,
+      "n_preds": 1,
+      "scores": [],
+      "boxes": [
+        [
+          567,
+          80,
+          577,
+          99
+        ]
+      ],
+      "precision": null,
+      "recall": null,
+      "has_gt": true,
+      "sample_note": "Bo\u00eetes GT SAMPLE \u2014 pas une inf\u00e9rence IA",
+      "visual": "0_80_30_0_06917_SAMPLE_GT.jpg",
+      "label": "Person POSSIBLE (thermique) \u2014 JAMAIS un survivant confirm\u00e9"
+    },
+    {
+      "image": "1_60_50_0_00344.jpg",
+      "stem": "1_60_50_0_00344",
+      "split": "test",
+      "seconds": 0.0,
+      "n_preds": 5,
+      "scores": [],
+      "boxes": [
+        [
+          50,
+          0,
+          56,
+          7
+        ],
+        [
+          38,
+          0,
+          48,
+          18
+        ],
+        [
+          294,
+          0,
+          309,
+          19
+        ],
+        [
+          478,
+          253,
+          493,
+          280
+        ],
+        [
+          460,
+          258,
+          473,
+          286
+        ]
+      ],
+      "precision": null,
+      "recall": null,
+      "has_gt": true,
+      "sample_note": "Bo\u00eetes GT SAMPLE \u2014 pas une inf\u00e9rence IA",
+      "visual": "1_60_50_0_00344_SAMPLE_GT.jpg",
+      "label": "Person POSSIBLE (thermique) \u2014 JAMAIS un survivant confirm\u00e9"
+    },
+    {
+      "image": "1_60_60_0_00480.jpg",
+      "stem": "1_60_60_0_00480",
+      "split": "test",
+      "seconds": 0.0,
+      "n_preds": 3,
+      "scores": [],
+      "boxes": [
+        [
+          237,
+          9,
+          248,
+          34
+        ],
+        [
+          295,
+          160,
+          313,
+          185
+        ],
+        [
+          463,
+          220,
+          473,
+          240
+        ]
+      ],
+      "precision": null,
+      "recall": null,
+      "has_gt": true,
+      "sample_note": "Bo\u00eetes GT SAMPLE \u2014 pas une inf\u00e9rence IA",
+      "visual": "1_60_60_0_00480_SAMPLE_GT.jpg",
+      "label": "Person POSSIBLE (thermique) \u2014 JAMAIS un survivant confirm\u00e9"
+    }
+  ],
+  "summary": {
+    "n_images": 5,
+    "mean_seconds": 0.0,
+    "mean_precision": null,
+    "mean_recall": null,
+    "metrics_valid": false,
+    "crash": false
+  },
+  "honest_failure": true,
+  "failure_reason": "Aucun poids thermique adequat apres essai YOLO+finetune court. Boites GT SAMPLE/HIT-UAV affichees. Person POSSIBLE seulement.",
+  "mode": "SAMPLE_GT",
+  "model_path": null,
+  "finetuned": false,
+  "attempt": {
+    "baseline": "yolov8n.pt COCO \u2014 faible sur thermique",
+    "finetune": "8 epochs sur HIT-UAV subset (14 images train) \u2014 mAP~0, detections insuffisantes",
+    "weights_saved": "weights/thermal_best.pt (non fiable pour demo)",
+    "fallback": "SAMPLE_GT annotations HIT-UAV affichees \u2014 pas une fausse IA"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "05_equipment_yolo",
+  "nom": "Détection d'équipements industriels",
+  "algo": "YOLOv8n (9 classes)",
+  "dataset": "Roboflow ×4 (CC BY 4.0) — 1745/280/232",
+  "tache": "Détection multi-classes équipements",
+  "metriques": "Test mAP50 0.507 · mAP50-95 0.380 · P 0.721 · R 0.439",
+  "statut": "REAL",
+  "checkpoint": "weights/equipment_best.pt"
+}

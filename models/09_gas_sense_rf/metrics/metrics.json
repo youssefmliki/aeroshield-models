@@ -1,0 +1,251 @@
+{
+  "evaluation_method": "batch_separated",
+  "primary_result": true,
+  "train_batches": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "test_batch": 10,
+  "n_test_samples": 3600,
+  "n_features": 128,
+  "model_version": "gas_classifier_v1",
+  "algorithm": "RandomForestClassifier",
+  "accuracy": 0.6016666666666667,
+  "macro_precision": 0.643246170121438,
+  "macro_recall": 0.6016666666666667,
+  "macro_f1": 0.5996022993526744,
+  "per_class": {
+    "Ethanol": {
+      "precision": 0.8646616541353384,
+      "recall": 0.38333333333333336,
+      "f1": 0.5311778290993071,
+      "support": 600
+    },
+    "Ethylene": {
+      "precision": 0.48364153627311524,
+      "recall": 0.5666666666666667,
+      "f1": 0.5218726016884113,
+      "support": 600
+    },
+    "Ammonia": {
+      "precision": 0.7467532467532467,
+      "recall": 0.575,
+      "f1": 0.6497175141242938,
+      "support": 600
+    },
+    "Acetaldehyde": {
+      "precision": 0.4897297297297297,
+      "recall": 0.755,
+      "f1": 0.5940983606557377,
+      "support": 600
+    },
+    "Acetone": {
+      "precision": 0.710806697108067,
+      "recall": 0.7783333333333333,
+      "f1": 0.7430389817024662,
+      "support": 600
+    },
+    "Toluene": {
+      "precision": 0.5638841567291312,
+      "recall": 0.5516666666666666,
+      "f1": 0.5577085088458298,
+      "support": 600
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Ethanol",
+      "Ethylene",
+      "Ammonia",
+      "Acetaldehyde",
+      "Acetone",
+      "Toluene"
+    ],
+    "matrix": [
+      [
+        230,
+        0,
+        0,
+        150,
+        137,
+        83
+      ],
+      [
+        19,
+        340,
+        99,
+        105,
+        35,
+        2
+      ],
+      [
+        0,
+        252,
+        345,
+        0,
+        0,
+        3
+      ],
+      [
+        8,
+        1,
+        0,
+        453,
+        4,
+        134
+      ],
+      [
+        9,
+        70,
+        18,
+        2,
+        467,
+        34
+      ],
+      [
+        0,
+        40,
+        0,
+        215,
+        14,
+        331
+      ]
+    ]
+  },
+  "inference_latency_ms": {
+    "batch_total_ms": 77.59210001677275,
+    "batch_mean_per_sample_ms": 0.021553361115770206,
+    "single_sample_mean_ms_n50": 60.952822000253946
+  },
+  "uncertain_rate_at_threshold": 0.3525,
+  "uncertainty_threshold": 0.45,
+  "classes_recognized": [
+    "Ethanol",
+    "Ethylene",
+    "Ammonia",
+    "Acetaldehyde",
+    "Acetone",
+    "Toluene"
+  ],
+  "disclaimer": "Experimental classification of compatible sensor measurements; not a certified gas leak detector.",
+  "evaluation_A_random_stratified_exploratory": {
+    "description": "Exploratory baseline only; can overestimate due to drift.",
+    "test_size": 0.2,
+    "metrics": {
+      "accuracy": 0.9949676491732566,
+      "macro_precision": 0.9955450389968301,
+      "macro_recall": 0.9941687678834957,
+      "macro_f1": 0.9948411708192006,
+      "per_class": {
+        "Ethanol": {
+          "precision": 0.9980430528375733,
+          "recall": 0.9941520467836257,
+          "f1": 0.99609375,
+          "support": 513
+        },
+        "Ethylene": {
+          "precision": 0.9914965986394558,
+          "recall": 0.9965811965811966,
+          "f1": 0.9940323955669225,
+          "support": 585
+        },
+        "Ammonia": {
+          "precision": 1.0,
+          "recall": 0.9847560975609756,
+          "f1": 0.9923195084485407,
+          "support": 328
+        },
+        "Acetaldehyde": {
+          "precision": 0.9974025974025974,
+          "recall": 0.9922480620155039,
+          "f1": 0.9948186528497409,
+          "support": 387
+        },
+        "Acetone": {
+          "precision": 0.9917627677100495,
+          "recall": 1.0,
+          "f1": 0.9958643507030603,
+          "support": 602
+        },
+        "Toluene": {
+          "precision": 0.9945652173913043,
+          "recall": 0.997275204359673,
+          "f1": 0.9959183673469387,
+          "support": 367
+        }
+      }
+    }
+  },
+  "evaluation_B_details": {
+    "description": "PRIMARY result. Train earlier batches, test held-out later batch.",
+    "train_batches": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "test_batch": 10,
+    "n_train": 10310,
+    "n_test": 3600,
+    "grouped_cv_macro_f1_rf_mean": 0.8613,
+    "grouped_cv_macro_f1_rf_std": 0.0866,
+    "grouped_cv_macro_f1_lr_mean": 0.8653,
+    "grouped_cv_macro_f1_lr_std": 0.0685,
+    "metrics_random_forest": {
+      "accuracy": 0.6016666666666667,
+      "macro_precision": 0.643246170121438,
+      "macro_recall": 0.6016666666666667,
+      "macro_f1": 0.5996022993526744,
+      "per_class": {
+        "Ethanol": {
+          "precision": 0.8646616541353384,
+          "recall": 0.38333333333333336,
+          "f1": 0.5311778290993071,
+          "support": 600
+        },
+        "Ethylene": {
+          "precision": 0.48364153627311524,
+          "recall": 0.5666666666666667,
+          "f1": 0.5218726016884113,
+          "support": 600
+        },
+        "Ammonia": {
+          "precision": 0.7467532467532467,
+          "recall": 0.575,
+          "f1": 0.6497175141242938,
+          "support": 600
+        },
+        "Acetaldehyde": {
+          "precision": 0.4897297297297297,
+          "recall": 0.755,
+          "f1": 0.5940983606557377,
+          "support": 600
+        },
+        "Acetone": {
+          "precision": 0.710806697108067,
+          "recall": 0.7783333333333333,
+          "f1": 0.7430389817024662,
+          "support": 600
+        },
+        "Toluene": {
+          "precision": 0.5638841567291312,
+          "recall": 0.5516666666666666,
+          "f1": 0.5577085088458298,
+          "support": 600
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "07_fire_spread_rf",
+  "nom": "Propagation scénario (synthétique)",
+  "algo": "Random Forest",
+  "dataset": "Scénarios 100% synthétiques (règles jouet)",
+  "tache": "Risque salles adjacentes — SIMULATION",
+  "metriques": "Accuracy synthétique 0.934 · Macro F1 0.927",
+  "statut": "SYNTHETIC_MODEL (pas physique)",
+  "checkpoint": "outputs/fire_spread_scenario_rf.joblib"
+}

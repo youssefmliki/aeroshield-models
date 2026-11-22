@@ -1,0 +1,6 @@
+{
+  "status": "DATASET_MISSING",
+  "message": "No real indoor before/after manifest found. Copy dataset_manifest_template.csv \u2192 manifest.csv and add licensed image pairs. Do not train on xBD satellite imagery for this indoor use case.",
+  "architecture": "ResNet-18 shared encoder + concat(|diff|) binary head",
+  "metrics": null
+}

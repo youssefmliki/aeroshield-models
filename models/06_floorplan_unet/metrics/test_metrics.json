@@ -1,0 +1,15 @@
+{
+  "status": "NOT_COMPUTED",
+  "reason": "CubiCasa5K not prepared on this machine; refusing to invent metrics.",
+  "required_next_steps": [
+    "python scripts/download_cubicasa.py",
+    "python -m floorplan.prepare_data",
+    "python scripts/download_weights.py",
+    "python -m floorplan.evaluate"
+  ],
+  "upstream_hf_claim_only": {
+    "source": "https://huggingface.co/Yytsi/floorplan-to-3d-walls",
+    "validation_miou_reported_by_author": 0.983,
+    "note": "Not our held-out measurement"
+  }
+}

@@ -1,0 +1,7 @@
+# Class mapping of the DELIVERED checkpoint
+# (SalahALHaismawi/yolov26-fire-detection) — NOT D-Fire label IDs
+nc: 3
+names:
+  0: fire
+  1: other
+  2: smoke

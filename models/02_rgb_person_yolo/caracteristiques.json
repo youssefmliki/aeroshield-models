@@ -1,0 +1,10 @@
+{
+  "id": "02_rgb_person_yolo",
+  "nom": "Détection de personnes (RGB)",
+  "algo": "YOLOv8n",
+  "dataset": "VisDrone2019-DET (person-only)",
+  "tache": "Détection d'objets — classe person",
+  "metriques": "Test mAP50 0.462 · P 0.609 · R 0.422 (n=200)",
+  "statut": "REAL",
+  "checkpoint": "../../../weights/rgb_person_best.pt"
+}

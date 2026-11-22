@@ -1,0 +1,59 @@
+{
+  "status": "COMPUTED_SYNTHETIC_ONLY",
+  "disclaimer": "Scores measure agreement with toy labeling rules \u2014 NOT real fire spread skill.",
+  "n_train_rows": 1264,
+  "n_test_rows": 273,
+  "n_train_scenarios": 280,
+  "n_test_scenarios": 60,
+  "accuracy": 0.9340659340659341,
+  "macro_f1": 0.9266129032258064,
+  "classification_report": {
+    "0": {
+      "precision": 0.9553072625698324,
+      "recall": 0.9447513812154696,
+      "f1-score": 0.95,
+      "support": 181.0
+    },
+    "1": {
+      "precision": 0.8936170212765957,
+      "recall": 0.9130434782608695,
+      "f1-score": 0.9032258064516129,
+      "support": 92.0
+    },
+    "accuracy": 0.9340659340659341,
+    "macro avg": {
+      "precision": 0.9244621419232141,
+      "recall": 0.9288974297381696,
+      "f1-score": 0.9266129032258064,
+      "support": 273.0
+    },
+    "weighted avg": {
+      "precision": 0.9345178772255914,
+      "recall": 0.9340659340659341,
+      "f1-score": 0.9342372681082358,
+      "support": 273.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      171,
+      10
+    ],
+    [
+      8,
+      84
+    ]
+  ],
+  "feature_importance": {
+    "temp_delta_c": 0.40988884294132444,
+    "smoke_level": 0.12780020545626697,
+    "graph_distance": 0.06321678998844142,
+    "door_open": 0.029393275215716528,
+    "fuel_load": 0.03839149789777038,
+    "ventilation": 0.03694197884656967,
+    "sprinkler_active": 0.24506720579436156,
+    "occupant_count": 0.01944036237031372,
+    "time_since_ignition_min": 0.029859841489235227
+  },
+  "source": "SYNTHETIC_MODEL"
+}

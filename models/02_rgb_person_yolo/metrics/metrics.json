@@ -1,0 +1,23 @@
+{
+  "label": "REAL_VISDRONE_RGB_PERSON",
+  "sensor": "RGB_aerial",
+  "not_thermal": true,
+  "dataset": "VisDrone2019-DET person-only (pedestrian+people\u21920)",
+  "checkpoint": "C:/Users/MSI/Desktop/HACK_INSAT/weights/rgb_person_best.pt",
+  "epochs": 30,
+  "base_weights": "yolov8n.pt",
+  "val": {
+    "mAP50": 0.45579632346006743,
+    "mAP50_95": 0.17019493120435575,
+    "precision": 0.6066521274958021,
+    "recall": 0.41565906838453914
+  },
+  "test": {
+    "mAP50": 0.4619025793304138,
+    "mAP50_95": 0.18333555500872006,
+    "precision": 0.6085690248069969,
+    "recall": 0.4223935197282467
+  },
+  "seconds_total": 881.08,
+  "disclaimer": "RGB drone person detection \u2014 NEVER claim thermal / survivor confirmation."
+}

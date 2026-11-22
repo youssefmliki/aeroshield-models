@@ -1,0 +1,10 @@
+{
+  "id": "03_thermal_person",
+  "nom": "Personne thermique",
+  "algo": "YOLO (slot thermique)",
+  "dataset": "HIT-UAV (insuffisant)",
+  "tache": "Détection thermique — démonstration UI",
+  "metriques": "Non revendiqué — SAMPLE",
+  "statut": "SAMPLE",
+  "checkpoint": "../../../weights/thermal_best.pt (fallback SAMPLE)"
+}

@@ -1,0 +1,57 @@
+{
+  "dataset_yaml": "C:\\Users\\MSI\\Desktop\\modelai\\datasets\\equipment\\data.yaml",
+  "dataset_image_counts": {
+    "test": 232,
+    "train": 1745,
+    "val": 280
+  },
+  "classes": {
+    "0": "cylinder",
+    "1": "cap",
+    "2": "marked",
+    "3": "tank",
+    "4": "electrical_cabinet",
+    "5": "electrical_device",
+    "6": "bolts_nuts_washer",
+    "7": "industrial_tools",
+    "8": "power_tools"
+  },
+  "epochs_requested": 15,
+  "train_seconds": 1413.7,
+  "test_precision_macro": 0.7205218218043774,
+  "test_recall_macro": 0.43852958285783306,
+  "test_map50": 0.506731722829989,
+  "test_map50_95": 0.37993658990919993,
+  "per_class": {
+    "cylinder": {
+      "map50_95": 0.7978464302520211
+    },
+    "cap": {
+      "map50_95": 0.20472913736048462
+    },
+    "marked": {
+      "map50_95": 0.03397301738431803
+    },
+    "tank": {
+      "map50_95": 0.6107143712127416
+    },
+    "electrical_cabinet": {
+      "map50_95": 0.7419720883937949
+    },
+    "electrical_device": {
+      "map50_95": 0.6942114101367993
+    },
+    "bolts_nuts_washer": {
+      "map50_95": 0.03342906105390144
+    },
+    "industrial_tools": {
+      "map50_95": 0.14652789766036448
+    },
+    "power_tools": {
+      "map50_95": 0.15602589572837358
+    }
+  },
+  "checkpoint": "C:\\Users\\MSI\\Desktop\\modelai\\runs\\firetwin_equipment\\train\\weights\\best.pt",
+  "evaluation_split": "test",
+  "note": "Metrics are for this dataset test split only; not certified real-world safety performance."
+}
